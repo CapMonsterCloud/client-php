@@ -1,6 +1,14 @@
-# Php client library for Zennolab.CapMonster api
+# CapMonster Cloud PHP client
 
-#### Usage
+Official PHP client for creating CAPTCHA tasks and receiving solutions from the CapMonster Cloud API.
+
+## Links
+
+- Documentation: [docs.capmonster.cloud](https://docs.capmonster.cloud/)
+- Dashboard / API key: [dash.capmonster.cloud](https://dash.capmonster.cloud/)
+
+## Quick start
+
 ```php
     include './client/Client.php';
     include './client/src/captcha/ImageToText.php';
@@ -27,10 +35,12 @@
     $hcaptchaResult = $client->solve($hcatpchaRequest);
 ```
 
-#### Response format
+Supported task families include reCAPTCHA, hCaptcha, GeeTest, image-to-text, and additional task types documented in the public docs.
+
+## Response format
  The result of the solve method always contains two fields: bool result, a request success indicator, and a mixed message field containing a text description of the error or an object of a successful response from the server.
 
-#### Supported captchas
+## Supported request classes
 
 - [GeeTestProxylessRequest](https://zenno.link/doc-geetest-en)
 - [GeeTestRequest](https://zenno.link/doc-geetest-proxy-en)
