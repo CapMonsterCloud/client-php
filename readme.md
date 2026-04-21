@@ -1,15 +1,16 @@
 # CapMonster Cloud PHP client
 
-Official PHP client for creating CAPTCHA tasks and receiving solutions from the CapMonster Cloud API.
+Official PHP SDK for the CapMonster Cloud API.
 
 ## Links
 
+- Package: [zennolab/capmonstercloud.client on Packagist](https://packagist.org/packages/zennolab/capmonstercloud.client)
 - Documentation: [docs.capmonster.cloud](https://docs.capmonster.cloud/)
 - Dashboard / API key: [dash.capmonster.cloud](https://dash.capmonster.cloud/)
 
 💵 Want to test before depositing? Contact support and we’ll add trial credits to your account.
 
-## Quick start
+## Minimal example
 
 ```php
     include './client/Client.php';
