@@ -2,12 +2,10 @@
 
     include_once "./client/Client.php";
     include_once "./client/src/captcha/RecaptchaV2.php";
-    include_once "./client/src/captcha/HCaptcha.php";
     include_once "./client/src/captcha/RecaptchaV3.php";
     include_once "./client/src/captcha/ImageToText.php";
     include_once "./client/src/captcha/GeeTest.php";
     include_once "./client/src/captcha/Turnstile.php";
-    include_once "./client/src/captcha/ComplexImageHCaptcha.php";
     include_once "./client/src/captcha/ComplexImageRecaptcha.php";
     include_once "./client/src/captcha/ComplexImageFuncaptcha.php";
 
@@ -37,24 +35,6 @@
             $this->assertTrue($solution->result, $solution->message);
         }
 
-        public function testHcaptchaSolve() {
-            global $clientKey;
-
-            $client = new Client($clientKey);
-            
-            $captchaOptions = [
-                "websiteURL" => "https://lessons.zennolab.com/captchas/hcaptcha/?level=easy",
-		        "websiteKey" => "472fc7af-86a4-4382-9a49-ca9090474471"
-            ];
-            $request = new HCaptchaRequest($captchaOptions["websiteURL"], $captchaOptions["websiteKey"]);
-
-            $solution = $client->solve($request);
-            if(gettype($solution->message) == 'array') {
-                $solution->setMessage(json_encode($solution->message));
-            }
-            $this->assertTrue($solution->result, $solution->message);
-        }
-
         public function testIncorrectWebsite() {
             global $clientKey;
 
@@ -64,7 +44,7 @@
                 "websiteURL" => "incorrect website",
 		        "websiteKey" => "6Lcg7CMUAAAAANphynKgn9YAgA4tQ2KI_iqRyTwd"
             ];
-            $request = new HCaptchaRequest($captchaOptions["websiteURL"], $captchaOptions["websiteKey"]);
+            $request = new RecaptchaV2Request($captchaOptions["websiteURL"], $captchaOptions["websiteKey"]);
 
             $solution = $client->solve($request);
             if(gettype($solution->message) == 'array') {
@@ -189,29 +169,6 @@
 		        "websiteKey" => "0x4AAAAAAABUY0VLtOUMAHxE"
             ];
             $request = new TurnstileRequest($captchaOptions["websiteURL"], $captchaOptions["websiteKey"]);
-
-            $solution = $client->solve($request);
-            if(gettype($solution->message) == 'array') {
-                $solution->setMessage(json_encode($solution->message));
-            }
-            $this->assertTrue($solution->result, $solution->message);
-        }
-
-        public function testComplexImageHCaptchaSolve()
-        {
-            global $clientKey;
-
-            $client = new Client($clientKey);
-
-            $captchaOptions = [
-                "imageUrls" => [
-                    "https://i.postimg.cc/kg71cbRt/image-1.jpg"
-                ],
-                "metadata" => [
-                    "Task" => "Please click each image containing a mountain"
-                ],
-            ];
-            $request = new ComplexImageHCaptchaRequest($captchaOptions['metadata'], $captchaOptions['imageUrls']);
 
             $solution = $client->solve($request);
             if(gettype($solution->message) == 'array') {
