@@ -1,3 +1,7 @@
+✅ CapMonster.Cloud — Fast, Reliable CAPTCHA Solving for Automation & Scraping
+
+[![CapMonster Cloud](https://help.zennolab.com/upload/u/e4/e4bc15839b25.png)](https://capmonster.cloud/en/?utm_source=github&utm_campaign=cmcrep)
+
 # CapMonster Cloud PHP client
 
 Official PHP SDK for the CapMonster Cloud API.
@@ -5,8 +9,8 @@ Official PHP SDK for the CapMonster Cloud API.
 ## Links
 
 - Package: [zennolab/capmonstercloud.client on Packagist](https://packagist.org/packages/zennolab/capmonstercloud.client)
-- Documentation: [docs.capmonster.cloud](https://docs.capmonster.cloud/)
-- Dashboard / API key: [dash.capmonster.cloud](https://dash.capmonster.cloud/)
+- Documentation: [docs.capmonster.cloud](https://docs.capmonster.cloud/?utm_source=github&utm_campaign=cmcrep)
+- Dashboard / API key: [dash.capmonster.cloud](https://dash.capmonster.cloud/?utm_source=github&utm_campaign=cmcrep)
 
 💵 Want to test before depositing? Contact support and we’ll add trial credits to your account.
 
@@ -49,3 +53,5 @@ Supported task families include reCAPTCHA, GeeTest, image-to-text, and additiona
 - [TurnstileProxylessRequest](https://zenno.link/doc-turnstile-en)
 - [TurnstileRequest](https://zenno.link/doc-turnstile-proxy-en)
 - [RecaptchaComplexImageTaskRequest](https://zenno.link/doc-complextask-rc-en)
+
+:star:️ If you find this project useful, please give it a star on GitHub!
